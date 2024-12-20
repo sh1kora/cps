@@ -1,0 +1,402 @@
+@import url("fonts/TTLakes/stylesheet.css");
+
+body {
+    margin: 0;
+    line-height: 24px;
+    font-size: 16px;
+    width: auto;
+    background-color: #F8F8F8;
+    font-family: "TT Lakes", monospace;
+    color: #1B1C21;
+}
+
+/* Параметры по умолчанию (мобильные) */
+
+/* Шапка страницы*/
+
+.header {
+    max-height: 88px;
+    padding: 24px 16px;
+    border-bottom: 1px solid #D9FFF5;
+    background-color: #FFFFFF;
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    max-height: 40px;
+
+}
+
+.svg-content {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__logo {
+    display: inline-flex;
+    margin-right: auto;
+    margin-left: 16px;
+}
+
+.header__separator {
+    display: inline-flex;
+    margin: 0;
+}
+
+.header__separator--temp {
+    display: none;
+}
+.header__separator--const {
+    margin-right: 16px;
+}
+
+.header__button {
+    background-color: #FF3E79;
+    border: none;
+    border-radius: 50%;
+    min-width: 40px;
+    min-height: 40px;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    transition-duration: 0.1s;
+}
+
+.header__button:hover {
+    background-color: rgba(255, 62, 121, 0.5);
+}
+
+.header__button:active {
+    background-color: #c02e59;
+}
+
+.header__button-group {
+    display: inline-flex;
+    gap: 16px;
+}
+
+.header__button-group--temp {
+    display: none;
+}
+
+.header__button-group--const {
+}
+
+/* Основной блок страницы */
+
+.page {
+}
+
+.page__inner {
+}
+
+/* Заголовок */
+
+.page__header {
+}
+
+.page__header-title {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 0;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    width: 100%;
+    font-size: 28px;
+    line-height: 40px;
+}
+
+.page__header-title svg {
+    margin-right: 16px;
+}
+
+.page__header-button-group {
+    display: none;
+}
+
+/* Меню навигации */
+
+.page__menu {
+}
+
+.page__menu-list {
+    list-style: none;
+    display: flex;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    margin: 0;
+    padding: 0;
+
+    position: relative; /* Для позиционирования mask */
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), black 1%, black 90%, rgba(0, 0, 0, 0));
+}
+
+.page__menu-item::-webkit-scrollbar {
+    display: none
+}
+
+.page__menu-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 24px;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.page__menu-item:first-child {
+    margin-left: 16px;
+}
+
+.page__menu-item:last-child {
+    margin-right: 62px;
+}
+
+.page__menu-item--active {
+    border: 2px solid #B8FFEC;
+    background-color: #FFFFFF;
+    border-radius: 6px;
+}
+
+.page__menu-link {
+    text-decoration: none;
+    color: #7E7E82;
+    padding: 8px 16px;
+}
+
+
+.page__about {
+    display: block;
+    justify-content: space-between;
+    margin-top: 24px;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.page__about-text {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.page__about-text-paragraph {
+    margin: 0;
+}
+
+.page__about-text-paragraph--more {
+    display: none;
+}
+.page__about-text-paragraph--less {
+    display: none;
+}
+
+/* Кнопка Читать дальше */
+.page__about-text-readMoreBtn {
+    display: flex;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+/* СВГ в кнопке */
+.page__about-text-readMoreBtn svg {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.page__about-img {
+    width: 100vw;
+}
+
+@media screen and (max-width: 315px) {
+    .header__separator {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 350px) {
+    .header__separator {
+        display: inline-flex;
+        margin: 0 20px;
+    }
+
+    .header__logo {
+        margin-left: 0;
+        margin-right: auto;
+    }
+}
+
+@media screen and (min-width: 425px) {
+    .header__separator--const {
+        display: none;
+    }
+
+}
+
+@media screen and (min-width: 560px) {
+    .header__separator {
+        display: inline-flex;
+    }
+
+    .header__button-group {
+        display: inline-flex;
+    }
+
+    .page__about {
+        display: flex;
+        flex-flow: column;
+        align-content: center;
+        margin: 32px 24px;
+    }
+
+    .page__about-img {
+        max-width: 512px;
+        border-radius: 6px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .page__about {
+        flex-flow: row;
+        gap: clamp(36px, 42px, 48px);
+    }
+
+    .page__about-text {
+        margin: 0;
+    }
+
+    .page__about-text-paragraph {
+        line-height: 20px;
+    }
+
+    /*.page__about-text-paragraph--less {*/
+    /*    display: block;*/
+    /*}*/
+
+    .page__about-img {
+        width: 50vw;
+        height: auto;
+        /*min-width: 320px;*/
+        /*height: auto;*/
+        border-radius: 6px;
+    }
+
+    .page__menu-item:first-child {
+        margin-left: 24px;
+    }
+}
+
+@media screen and (min-width: 720px) {
+    .page__about-text-paragraph--less {
+        display: inline;
+    }
+
+    .page__about-text-paragraph {
+        margin-bottom: 20px;
+    }
+
+    .page__about-text {
+        width: 50vw;
+    }
+}
+
+@media screen and (min-width: 860px) {
+    .page__about-text-paragraph--less {
+        display: none;
+    }
+
+    .page__about-text-paragraph--more {
+        display: inline;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .page__menu-list {
+        overflow: hidden;
+
+
+        position: relative; /* Для позиционирования mask */
+        mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), black 1%, black 90%, rgba(0, 0, 0, 0));
+    }
+}
+
+/* Ultra wide */
+@media screen and (min-width: 1120px) {
+    .header {
+        display: none;
+    }
+
+    .page__header {
+        display: flex;
+        margin-top: 42px;
+        margin-right: 25px;
+        margin-bottom: 8px
+    }
+
+    .page__header-title {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .page__header-button-group {
+        display: flex;
+        flex-flow: row;
+    }
+
+    .header__button-wrapper {
+        display: inline-flex;
+        align-items: center;
+        text-wrap: nowrap;
+        font-size: 16px;
+        line-height: 24px;
+        white-space: nowrap;
+    }
+
+    .header__button-description {
+        margin-right: 8px;
+    }
+
+    .header__button-wrapper{
+        margin-left: 32px;
+    }
+
+    .page__menu {
+        margin-left: 32px;
+        margin-right: 32px;
+    }
+
+    .page__menu-list {
+        flex-wrap: wrap;
+        mask-image: none;
+    }
+
+    .page__menu-item:first-child {
+        margin-left: 0;
+    }
+
+    .page__menu-item:last-child {
+        margin-right: 0;
+    }
+
+    .page__about {
+        margin: 16px 34px;
+        height: auto;
+    }
+
+    .page__about-img {
+        overflow: hidden;
+        min-height: 307px;
+        min-width: 531px;
+        max-width: 40vw;
+        margin: 0;
+    }
+}
